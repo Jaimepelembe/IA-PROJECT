@@ -17,7 +17,7 @@ class AlgoritmosBusca:
                 fila.extend(graph[vertice]-nodesVisited)
                 
                 
-    def buscaCustoUniforme(grafo,inicio,objectivo):
+    def buscaCustoUniforme(grafo,custos,inicio,objectivo):
         fila=[(0,inicio)] #Custo de caminho e o estado inicial
         visitados=set()
         
@@ -31,7 +31,7 @@ class AlgoritmosBusca:
                     return
                 for vizinho in grafo[vertice]:
                     if vizinho not in visitados:
-                        custoActual=grafo[vertice][vizinho][0]
+                        custoActual=custos[(vertice,vizinho)]
                         heapq.heappush(fila,(custoAcumulado+custoActual,vizinho))
                         #Ao entrar no nó vizinho esta deve ser pintado de outra cor na interface.
                         #heapq.heappush(fila,(custoAcumulado+custos[(vertice,vizinho)],vizinho))
