@@ -72,8 +72,8 @@ class Grafo:
     
     def positionOfNodes(self):
         position={
-            "Inhagoia":(32,5),"Absa":(28,5),"Mogas":(24,5),"Praca Magaia":(20,5),"UIR":(16,5),"Brigada montada":(6,9),"HGJM":(5.9,3.5),
-            "Versalhes":(0.067,0.071),"Estatua Mondlane":(20,7),
+            "Inhagoia":(32,5),"Absa":(28,5),"Mogas":(24,5),"Praca Magaia":(20,5),"UIR":(16,5),"Brigada montada":(12,5),"HGJM":(8,9),
+            "Versalhes":(0.067,0.071),"Estatua Mondlane":(16,2),
             "Jardim Majerman":(6,9),
             "Guerra popular":(6,9),
             "Pep":(6,9),
