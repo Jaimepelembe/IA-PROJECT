@@ -20,9 +20,7 @@ class Grafo:
         for node ,data in listaNos:
             if node not in lista:
                 lista.append(node)
-                self.graph.add_node(node,hn=data)
-                print("No: ",node,"Heuristica: ",data)
-            
+                self.graph.add_node(node,hn=data)            
           
 
     def receberVertices(self):
@@ -63,12 +61,12 @@ class Grafo:
         nodesLabels=self.retornarHeuristicas()
         #{node:dictionary["hn"] for node,dictionary in self.graph.nodes(data=True)}
         
-        #nx.draw_networkx_labels(self.graph,pos=,labels=nodesLabels, font_color="black",font_size=12,font_family="Times New Roman",font_weight="bold")
+        nx.draw_networkx_labels(self.graph,pos=self.positionOfNodesLabel(),labels=nodesLabels, font_color="black",font_size=12,font_family="Times New Roman",font_weight="bold")
 
 
         #edges labels
         edgeLabels={(nodeA,nodeB):dictionary["gn"] for nodeA,nodeB,dictionary in self.graph.edges(data=True)}
-        #nx.draw_networkx_edge_labels(self.graph,edge_labels=edgeLabels,label_pos=0.5)#label_pos=0.5 puts the label in the middle of the arrow
+        nx.draw_networkx_edge_labels(self.graph,pos=self.positionOfNodes(),edge_labels=edgeLabels,label_pos=0.5)#label_pos=0.5 puts the label in the middle of the arrow
         plt.margins(0.2)
         plt.show()
     
@@ -85,11 +83,19 @@ class Grafo:
             "Tecnicol":(-15,3)}    
         return position 
     
+    def positionOfNodesLabel(self):
+        positionOfLabel={}
+        for node,data in self.positionOfNodes().items():
+            positionOfLabel[node]=(data[0]-0.6,data[1]+0.35)
+        return positionOfLabel
+    
 g=Grafo()        
 g.inicializarGrafo()
-g.retornarHeuristicas()
+#g.retornarHeuristicas()
 g.desenharGrafo()
+print(g.positionOfNodesLabel())
 
-print("Numero nos:",g.getGrafo().nodes())
-print("Numero nos:",g.getGrafo().number_of_nodes())
+
+#print("Numero nos:",g.getGrafo().nodes())
+#print("Numero nos:",g.getGrafo().number_of_nodes())
 
