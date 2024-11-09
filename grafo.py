@@ -54,8 +54,10 @@ class Grafo:
         return self.graph
     
     def desenharGrafo(self):
+        colorNodes="#c1121f"
+        fontNodes="#fdf0d5"
         #Grafo
-        nx.draw(self.graph,pos=self.positionOfNodes(),with_labels=True,node_color="red",node_size=3000, font_color="white",font_size=8,font_family="Times New Roman",font_weight="bold",edge_color="black",width=3)
+        nx.draw(self.graph,pos=self.positionOfNodes(),with_labels=True,node_color=colorNodes,node_size=1900, font_color=fontNodes,font_size=6,font_family="verdana",font_weight="bold",edge_color="black",width=3)
 
         #Nodes labels
         nodesLabels=self.retornarHeuristicas()
@@ -72,16 +74,17 @@ class Grafo:
     
     def positionOfNodes(self):
         position={
-            "Inhagoia":(32,5),"Absa":(28,5),"Mogas":(24,5),"Praca Magaia":(20,5),"UIR":(16,5),"Brigada montada":(12,5),"HGJM":(8,9),
-            "Versalhes":(0.067,0.071),"Estatua Mondlane":(16,2),
-            "Jardim Majerman":(6,9),
-            "Guerra popular":(6,9),
-            "Pep":(6,9),
-            "Movitel":(6,9),
-            "Ponto final":(6,9),
-            "Belita":(24,-0.7),
-            "Tecnicol":(22,-0.7)}    
+            "Inhagoia":(46,5),"Absa":(40,5),"Mogas":(34,5),"Praca Magaia":(28,5),"UIR":(22,5),"Brigada montada":(16,5),"HGJM":(10,5),
+            "Versalhes":(4,6),"Jardim Majerman":(-2,6),
+            "Guerra popular":(-8,6),
+            "Estatua Mondlane":(8,3),
+            "Pep":(-7,7),
+            "Movitel":(-14,6),
+            "Ponto final":(-9,3),
+            "Belita":(0,3),
+            "Tecnicol":(-15,3)}    
         return position 
+    
 g=Grafo()        
 g.inicializarGrafo()
 g.retornarHeuristicas()
