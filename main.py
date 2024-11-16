@@ -86,7 +86,7 @@ def desenharNosPintados(caminho):
     global figure
     contador=0
     corNormal="#c1121f"
-    corVisitados="#ffd166"
+    corVisitados="#008B8B"
     corSolucao="#06d6a0"
     dicionarioCores={}
     for node in grafo.getGrafo().nodes:

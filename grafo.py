@@ -85,7 +85,7 @@ class Grafo:
         print("Caminho: ",caminho)
         #Grafo
         plt.clf()#Limpar grafico antigo
-        nx.draw(self.graph,pos=self.positionOfNodes(),with_labels=True,node_color=coresNos,node_size=1900, font_color=colorFontNodes,font_size=6,font_family="verdana",font_weight="bold",edge_color="black",width=3)
+        nx.draw(self.graph,pos=self.positionOfNodes(),with_labels=True,node_color=coresNos,node_size=2000, font_color=colorFontNodes,font_size=4,font_family="verdana",font_weight="bold",edge_color="black",width=3)
        
         #Nodes labels
         nodesLabels=self.retornarHeuristicas()        
